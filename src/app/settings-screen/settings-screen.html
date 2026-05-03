@@ -1,1 +1,175 @@
-<p>settings-screen works!</p>
+<div class="settings-screen">
+  <section class="settings-screen__section">
+
+    <div class="settings-screen__heading-block">
+      <h1 class="settings-screen__title">Settings</h1>
+      <div class="settings-screen__divider" aria-hidden="true">
+        <span class="settings-screen__divider-diamond"></span>
+        <span class="settings-screen__divider-line"></span>
+      </div>
+    </div>
+
+    <div class="settings-screen__content">
+
+      <div class="settings-screen__left">
+        <div class="settings-screen__group settings-screen__group--themes">
+          <div class="settings-screen__group-header">
+            <img
+              src="/assets/icons/theme-palette.svg"
+              alt=""
+              aria-hidden="true"
+              class="settings-screen__group-icon"
+            />
+            <h2 class="settings-screen__group-title">Game themes</h2>
+          </div>
+
+          <ul class="settings-screen__theme-list" role="list">
+            @for (theme of themes; track theme.label) {
+              <li class="settings-screen__theme-item">
+                <button
+                  type="button"
+                  class="settings-screen__theme-btn"
+                  [class.settings-screen__theme-btn--active]="selectedTheme() === theme"
+                  (click)="selectTheme(theme)"
+                  (mouseenter)="previewTheme(theme)"
+                  (mouseleave)="previewTheme(null)"
+                  [attr.aria-pressed]="selectedTheme() === theme"
+                >
+                  <span class="settings-screen__theme-radio" aria-hidden="true">
+                    <span class="settings-screen__theme-radio-dot"></span>
+                  </span>
+                  <span class="settings-screen__theme-name">{{ theme.label }}</span>
+                  <span class="settings-screen__theme-indicator" aria-hidden="true">
+                    <span class="settings-screen__theme-indicator-line"></span>
+                    <span class="settings-screen__theme-indicator-diamond"></span>
+                  </span>
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="settings-screen__group settings-screen__group--players">
+          <div class="settings-screen__group-header">
+            <img
+              src="/assets/icons/player.svg"
+              alt=""
+              aria-hidden="true"
+              class="settings-screen__group-icon"
+            />
+            <h2 class="settings-screen__group-title">Choose Player</h2>
+          </div>
+
+          <ul class="settings-screen__option-list" role="list">
+            @for (player of players; track player.label) {
+              <li class="settings-screen__option-item">
+                <button
+                  type="button"
+                  class="settings-screen__option-btn"
+                  [class.settings-screen__option-btn--active]="selectedPlayer() === player"
+                  (click)="selectPlayer(player)"
+                  [attr.aria-pressed]="selectedPlayer() === player"
+                >
+                  <span class="settings-screen__option-radio" aria-hidden="true">
+                    <span class="settings-screen__option-radio-dot"></span>
+                  </span>
+                  <span class="settings-screen__option-name">{{ player.label }}</span>
+                  <span class="settings-screen__option-indicator" aria-hidden="true">
+                    <span class="settings-screen__option-indicator-line"></span>
+                    <span class="settings-screen__option-indicator-diamond"></span>
+                  </span>
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="settings-screen__group settings-screen__group--board-size">
+          <div class="settings-screen__group-header">
+            <img
+              src="/assets/icons/board-size.svg"
+              alt=""
+              aria-hidden="true"
+              class="settings-screen__group-icon"
+            />
+            <h2 class="settings-screen__group-title">Board size</h2>
+          </div>
+
+          <ul class="settings-screen__option-list" role="list">
+            @for (size of boardSizes; track size.label) {
+              <li class="settings-screen__option-item">
+                <button
+                  type="button"
+                  class="settings-screen__option-btn"
+                  [class.settings-screen__option-btn--active]="selectedBoardSize() === size"
+                  (click)="selectBoardSize(size)"
+                  [attr.aria-pressed]="selectedBoardSize() === size"
+                >
+                  <span class="settings-screen__option-radio" aria-hidden="true">
+                    <span class="settings-screen__option-radio-dot"></span>
+                  </span>
+                  <span class="settings-screen__option-name">{{ size.label }}</span>
+                  <span class="settings-screen__option-indicator" aria-hidden="true">
+                    <span class="settings-screen__option-indicator-line"></span>
+                    <span class="settings-screen__option-indicator-diamond"></span>
+                  </span>
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- Rechte Spalte -->
+      <div class="settings-screen__right">
+        <div class="settings-screen__preview" aria-hidden="true">
+          @for (theme of themes; track theme.label) {
+            <img
+              class="settings-screen__preview-img"
+              [class.settings-screen__preview-img--visible]="activePreviewTheme() === theme"
+              [src]="theme.preview"
+              [alt]="theme.label"
+            />
+          }
+        </div>
+
+        <div class="settings-screen__summary">
+          <span class="settings-screen__summary-text">{{ navThemeLabel() }}</span>
+
+          <span class="settings-screen__summary-separator" aria-hidden="true">
+            @if (allSelectionsMade()) {
+              <span class="settings-screen__summary-separator-line"></span>
+              <span class="settings-screen__summary-separator-diamond"></span>
+            } @else {
+              <span class="settings-screen__summary-separator-slash-line"></span>
+            }
+          </span>
+
+          <span class="settings-screen__summary-text">{{ navPlayerLabel() }}</span>
+
+          <span class="settings-screen__summary-separator" aria-hidden="true">
+            @if (allSelectionsMade()) {
+              <span class="settings-screen__summary-separator-line"></span>
+              <span class="settings-screen__summary-separator-diamond"></span>
+            } @else {
+              <span class="settings-screen__summary-separator-slash-line"></span>
+            }
+          </span>
+
+          <span class="settings-screen__summary-text">{{ navBoardSizeLabel() }}</span>
+
+          <button type="button" class="settings-screen__start-btn">
+            <img
+              src="/assets/icons/start.svg"
+              alt=""
+              aria-hidden="true"
+              class="settings-screen__start-btn-icon"
+            />
+            <span class="settings-screen__start-btn-text">Start</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>

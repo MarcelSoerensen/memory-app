@@ -136,6 +136,23 @@
     }
   }
 
+  &:active {
+    transform: scale(1);
+    background-color: rgba(239, 234, 128, 1);
+
+    .play-button__icon {
+      transform: rotate(0deg);
+    }
+
+    .play-button__arrow--default {
+      display: block;
+    }
+
+    .play-button__arrow--hover {
+      display: none;
+    }
+  }
+
   &:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 4px;
