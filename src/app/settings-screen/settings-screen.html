@@ -38,7 +38,7 @@
                   <span class="settings-screen__theme-radio" aria-hidden="true">
                     <span class="settings-screen__theme-radio-dot"></span>
                   </span>
-                  <span class="settings-screen__theme-name">{{ theme.label }}</span>
+                  <span class="settings-screen__theme-name" [attr.data-label]="theme.label">{{ theme.label }}</span>
                   <span class="settings-screen__theme-indicator" aria-hidden="true">
                     <span class="settings-screen__theme-indicator-line"></span>
                     <span class="settings-screen__theme-indicator-diamond"></span>
@@ -73,7 +73,7 @@
                   <span class="settings-screen__option-radio" aria-hidden="true">
                     <span class="settings-screen__option-radio-dot"></span>
                   </span>
-                  <span class="settings-screen__option-name">{{ player.label }}</span>
+                  <span class="settings-screen__option-name" [attr.data-label]="player.label">{{ player.label }}</span>
                   <span class="settings-screen__option-indicator" aria-hidden="true">
                     <span class="settings-screen__option-indicator-line"></span>
                     <span class="settings-screen__option-indicator-diamond"></span>
@@ -108,7 +108,7 @@
                   <span class="settings-screen__option-radio" aria-hidden="true">
                     <span class="settings-screen__option-radio-dot"></span>
                   </span>
-                  <span class="settings-screen__option-name">{{ size.label }}</span>
+                  <span class="settings-screen__option-name" [attr.data-label]="size.label">{{ size.label }}</span>
                   <span class="settings-screen__option-indicator" aria-hidden="true">
                     <span class="settings-screen__option-indicator-line"></span>
                     <span class="settings-screen__option-indicator-diamond"></span>
@@ -158,7 +158,8 @@
 
           <span class="settings-screen__summary-text">{{ navBoardSizeLabel() }}</span>
 
-          <button type="button" class="settings-screen__start-btn">
+          <button type="button" class="settings-screen__start-btn"
+            (click)="startGame()">
             <img
               src="/assets/icons/start.svg"
               alt=""

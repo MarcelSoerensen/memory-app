@@ -7,10 +7,9 @@
 }
 
 .settings-screen__section {
-  width: 100%;
-  max-width: 1440px;
+  width: min(70%, 1440px);
   margin: 0 auto;
-  padding: 4rem 15%;
+  padding: 4rem 0;
 }
 
 .settings-screen__heading-block {
@@ -180,6 +179,22 @@
   display: block;
 }
 
+.settings-screen__theme-name,
+.settings-screen__option-name {
+  display: inline-flex;
+  flex-direction: column;
+
+  &::after {
+    content: attr(data-label);
+    font-weight: 700;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
 .settings-screen__theme-indicator,
 .settings-screen__option-indicator {
   display: flex;
@@ -213,7 +228,7 @@
 .settings-screen__preview {
   width: min(100%, 38rem);
   position: relative;
-  min-height: 28rem;
+  height: 28rem;
 }
 
 .settings-screen__preview-img {
@@ -221,7 +236,7 @@
   top: 0;
   right: 0;
   width: 100%;
-  max-height: 28rem;
+  height: 100%;
   object-fit: contain;
   object-position: right top;
   opacity: 0;
@@ -346,39 +361,68 @@
   outline-offset: 4px;
 }
 
-@media (max-width: 74rem) {
+@media (max-width: 900px) {
   .settings-screen__section {
-    padding: 2rem 8%;
+    padding: 2rem 0;
+  }
+
+  .settings-screen__heading-block {
+    padding: 0 8%;
+    margin-bottom: 2rem;
   }
 
   .settings-screen__content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 0;
+  }
+
+  .settings-screen__left {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    padding: 0 8%;
+    margin-bottom: 2rem;
+  }
+
+  .settings-screen__group {
+    margin-bottom: 0;
+  }
+
+  .settings-screen__theme-list,
+  .settings-screen__option-list {
+    padding-left: 2rem;
   }
 
   .settings-screen__left,
-  .settings-screen__right,
-  .settings-screen__preview,
-  .settings-screen__summary {
+  .settings-screen__right {
     width: 100%;
   }
 
   .settings-screen__right {
-    align-items: flex-start;
+    display: block;
+    width: 100%;
   }
 
   .settings-screen__preview {
-    min-height: 20rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 2rem;
   }
 
   .settings-screen__preview-img {
-    right: auto;
+    right: 0;
     left: 0;
-    object-position: left top;
+    width: 100%;
+    height: 100%;
+    object-position: center top;
   }
 
   .settings-screen__summary {
-    justify-content: flex-start;
+    width: 100%;
+    padding: 0 8%;
+    justify-content: center;
     flex-wrap: wrap;
   }
 }

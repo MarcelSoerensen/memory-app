@@ -1,0 +1,106 @@
+@use './themes/code-vibes';
+@use './themes/gaming';
+@use './themes/da-projects';
+@use './themes/foods';
+
+.navbar {
+	width: min(72rem, 100%);
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 1rem;
+}
+
+.navbar__players {
+	display: flex;
+	gap: 1.5rem;
+	padding: 0.5rem 0.65rem;
+}
+
+.navbar__player-score {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	padding: 0;
+}
+
+.navbar__player-icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: block;
+}
+
+.navbar__score-value {
+	font-family: 'Almarai', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	color: rgba(48, 49, 49, 1);
+	min-width: 1.2rem;
+	text-align: center;
+}
+
+.navbar__player-name {
+	font-family: 'Almarai', sans-serif;
+	font-weight: 700;
+	font-size: 0.95rem;
+	line-height: 1;
+}
+
+.navbar__current {
+	justify-self: center;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	padding: 0.55rem 0.9rem;
+	background-color: rgba(245, 241, 243, 1);
+}
+
+.navbar__current-label {
+	font-family: 'Almarai', sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: rgba(48, 49, 49, 1);
+}
+
+.navbar__current-icon {
+	width: 2rem;
+	height: 1.5rem;
+	display: block;
+}
+
+.navbar__exit-btn {
+	border: none;
+	background-color: rgba(48, 49, 49, 1);
+	color: rgba(255, 255, 255, 1);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: 'Almarai', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	padding: 0.6rem 0.95rem;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.navbar__exit-btn::before {
+	content: '';
+	width: 2rem;
+	height: 2rem;
+	background-color: currentColor;
+	-webkit-mask: url('/assets/icons/exit-default.svg') center / contain no-repeat;
+	mask: url('/assets/icons/exit-default.svg') center / contain no-repeat;
+}
+
+@media (max-width: 840px) {
+	.navbar {
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+
+	.navbar__players {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}

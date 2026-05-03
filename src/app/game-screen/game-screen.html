@@ -1,1 +1,45 @@
-<p>game-screen works!</p>
+<section
+	class="game-screen"
+	[class.game-screen--theme-code-vibes]="themeId() === 'code-vibes-theme'"
+	[class.game-screen--theme-gaming]="themeId() === 'gaming-theme'"
+	[class.game-screen--theme-da-projects]="themeId() === 'da-projects-theme'"
+	[class.game-screen--theme-foods]="themeId() === 'foods-theme'"
+>
+	<div class="game-screen__layout">
+		<app-navbar
+			[themeId]="themeId()"
+			[activePlayerId]="activePlayerId()"
+			[scores]="scoreByPlayer()"
+		></app-navbar>
+
+		<div
+			class="game-screen__board"
+			[style.grid-template-columns]="'repeat(' + columns() + ', minmax(0, 1fr))'"
+			[style.grid-template-rows]="'repeat(' + rows() + ', minmax(0, 1fr))'"
+			[style.aspect-ratio]="columns() + '/' + rows()"
+		>
+			@for (card of gameCards(); track card.id) {
+				<button
+					type="button"
+					class="game-screen__card"
+					[class.game-screen__card--flipped]="card.isFlipped"
+					[class.game-screen__card--matched]="card.isMatched"
+					(click)="flipCard(card.id)"
+					[disabled]="isBoardLocked() || card.isMatched"
+					[attr.aria-pressed]="card.isFlipped"
+					[attr.aria-disabled]="isBoardLocked() || card.isMatched"
+					[attr.aria-label]="'Memory card ' + card.id"
+				>
+					<span class="game-screen__card-inner">
+						<span class="game-screen__card-face game-screen__card-face--back">
+							<img class="game-screen__card-image" [src]="cardBackUrl()" alt="" aria-hidden="true" />
+						</span>
+						<span class="game-screen__card-face game-screen__card-face--front">
+							<img class="game-screen__card-image" [src]="card.imageUrl" alt="" aria-hidden="true" />
+						</span>
+					</span>
+				</button>
+			}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,10 @@
+.game-screen--theme-foods {
+	background-color: rgba(255, 255, 255, 1);
+	--game-screen-match-border-width: 3px;
+	--game-screen-match-border-color: rgba(228, 137, 67, 1);
+	--game-screen-match-border-radius: 0;
+	--game-screen-match-shadow:
+		0 0 0 1px rgba(255, 236, 180, 0.95),
+		0 0 0 3px rgba(228, 137, 67, 1),
+		0 0 12px rgba(255, 204, 92, 0.35);
+}
