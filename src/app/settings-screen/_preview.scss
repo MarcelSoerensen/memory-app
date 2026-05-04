@@ -1,0 +1,23 @@
+.settings-screen__preview {
+  width: min(100%, 42rem);
+  position: relative;
+  height: 28rem;
+  max-height: 600px;
+}
+
+.settings-screen__preview-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right top;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+
+  &--visible {
+    opacity: 1;
+  }
+}

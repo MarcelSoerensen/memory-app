@@ -1,0 +1,154 @@
+@media (max-width: 1250px) {
+  .settings-screen__content {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .settings-screen__preview,
+  .settings-screen__summary {
+    width: 38rem;
+  }
+
+  .settings-screen__theme-word {
+    display: none;
+  }
+
+  .settings-screen__theme-name {
+    &::after {
+      content: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .settings-screen__preview,
+  .settings-screen__summary {
+    width: 32rem;
+  }
+}
+
+@media (max-width: 940px) {
+  .settings-screen__section {
+    width: 70%;
+    padding: 2rem 0;
+  }
+
+  .settings-screen__heading-block {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .settings-screen__content {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .settings-screen__left {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(48, 49, 49, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 40%;
+    max-width: 250px;
+  }
+
+  .settings-screen__group {
+    margin-bottom: 2rem;
+  }
+
+  .settings-screen__theme-list,
+  .settings-screen__option-list {
+    padding-left: 1rem;
+  }
+
+  .settings-screen__right {
+    display: block;
+    width: 100%;
+  }
+
+  .settings-screen__preview {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 460 / 412;
+    margin-bottom: 2rem;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+  }
+
+  .settings-screen__preview-img {
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center top;
+  }
+
+  .settings-screen__summary {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 740px) {
+  .settings-screen__section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .settings-screen__group-title-word--game,
+  .settings-screen__group-title-word--choose,
+  .settings-screen__group-title-word--board {
+    display: none;
+  }
+
+  .settings-screen__left {
+    width: 200px;
+  }
+
+  .settings-screen__preview {
+    width: 100%;
+    height: 38rem;
+    aspect-ratio: auto;
+    overflow: hidden;
+  }
+
+  .settings-screen__preview-img {
+    left: 0;
+    right: auto;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-position: left top;
+  }
+}
+
+@media (max-width: 600px) {
+  .settings-screen__summary-text,
+  .settings-screen__summary-separator {
+    display: none;
+  }
+
+  .settings-screen__start-btn {
+    margin-left: 0;
+    width: 90vw;
+    justify-content: center;
+  }
+
+  .settings-screen__section {
+    width: 90%;
+    padding: 2rem 0;
+  }
+}

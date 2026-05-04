@@ -1,0 +1,35 @@
+.settings-screen__heading-block {
+  margin-bottom: 3.75rem;
+}
+
+.settings-screen__title {
+  font-family: 'Red Rose', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.375rem);
+  color: rgba(48, 49, 49, 1);
+  margin: 0 0 0.625rem;
+  line-height: 1;
+}
+
+.settings-screen__divider {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.settings-screen__divider-diamond {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(239, 234, 128, 1);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-right: -4px;
+}
+
+.settings-screen__divider-line {
+  display: block;
+  height: 3px;
+  width: 200px;
+  background-color: rgba(239, 234, 128, 1);
+}
