@@ -60,7 +60,7 @@
   align-self: flex-start;
   font-family: 'Red Rose', sans-serif;
   font-weight: 400;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   color: #ffffff;
   margin: 0 0 0.5rem 0;
   line-height: 1.1;
@@ -69,7 +69,7 @@
 .start-screen__title {
   font-family: 'Red Rose', sans-serif;
   font-weight: 700;
-  font-size: 8.75rem;
+  font-size: clamp(2.5rem, 11vw, 8.75rem);
   color: #ffffff;
   text-align: center;
   margin: 0 0 5rem 0;
@@ -88,7 +88,7 @@
   cursor: pointer;
   font-family: 'Red Rose', sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
   color: rgba(48, 49, 49, 1);
   line-height: 1;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);

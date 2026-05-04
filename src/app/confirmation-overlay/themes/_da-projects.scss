@@ -1,0 +1,48 @@
+.confirmation-overlay--theme-da-projects .confirmation-overlay__panel {
+	background-color: rgba(255, 255, 255, 1);
+	animation: confirmation-overlay__panel--fade-in 300ms ease;
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__title {
+	color: rgba(58, 115, 145, 1);
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__btn {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__btn--secondary {
+	background-color: rgba(198, 228, 240, 1);
+	border: 1px solid transparent;
+	color: rgba(68, 125, 153, 1);
+	box-shadow: 2px 2px 6px rgba(100, 130, 145, 0.55);
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__btn--secondary:hover {
+	background-color: rgba(58, 115, 145, 1);
+	color: rgba(253, 254, 254, 1);
+	box-shadow: none;
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__btn--primary {
+	background-color: rgba(238, 144, 133, 1);
+	border: 1px solid transparent;
+	color: rgba(255, 255, 255, 1);
+	box-shadow: 2px 2px 6px rgba(100, 130, 145, 0.55);
+}
+
+.confirmation-overlay--theme-da-projects .confirmation-overlay__btn--primary:hover {
+	background-color: rgba(220, 101, 87, 1);
+	box-shadow: none;
+}
+
+@keyframes confirmation-overlay__panel--fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConfirmationOverlay } from '../confirmation-overlay/confirmation-overlay';
 import { GameSettingsService, PlayerId } from '../game-settings.service';
 import { Navbar } from '../navbar/navbar';
 
@@ -12,13 +14,14 @@ interface GameCard {
 
 @Component({
   selector: 'app-game-screen',
-  imports: [Navbar],
+  imports: [Navbar, ConfirmationOverlay],
   templateUrl: './game-screen.html',
   styleUrl: './game-screen.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameScreen {
   private readonly settings = inject(GameSettingsService);
+  private readonly router = inject(Router);
 
   readonly themeId = computed(() => this.settings.selectedTheme().id);
   readonly columns = computed(() => this.settings.selectedBoardSize()?.cols ?? 4);
@@ -30,6 +33,7 @@ export class GameScreen {
     blue: 0,
     orange: 0,
   });
+  readonly isExitOverlayOpen = signal(false);
 
   readonly playerOrder = computed<[PlayerId, PlayerId]>(() => {
     const selected = this.settings.selectedPlayer()?.id ?? 'blue';
@@ -192,5 +196,18 @@ export class GameScreen {
     }
 
     return shuffled;
+  }
+
+  openExitOverlay(): void {
+    this.isExitOverlayOpen.set(true);
+  }
+
+  closeExitOverlay(): void {
+    this.isExitOverlayOpen.set(false);
+  }
+
+  confirmExitGame(): void {
+    this.isExitOverlayOpen.set(false);
+    void this.router.navigate(['/settings']);
   }
 }

@@ -20,11 +20,12 @@
 
 .game-screen--theme-gaming .game-screen__card-face--back .game-screen__card-image {
 	border-inline: 1px solid rgba(158, 45, 98, 1);
+	border-radius: clamp(4px, 20%, 22px);
 }
 
 .game-screen--theme-gaming .game-screen__card-image {
 	box-sizing: border-box;
-	border-radius: 12px;
+	border-radius: clamp(5px, 20%, 22px);
 	width: auto;
 	height: 100%;
 	filter: drop-shadow(8px 8px 8px rgba(18, 16, 35, 0.5));

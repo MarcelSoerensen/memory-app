@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { PlayerId, ThemeId } from '../game-settings.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class Navbar {
     blue: 0,
     orange: 0,
   });
+  readonly exitGame = output<void>();
 
   readonly bluePlayerIcon = computed(
     () => `/assets/images/${this.themeId()}/player-blue.svg`,
@@ -35,4 +36,8 @@ export class Navbar {
   readonly currentPlayerLabel = computed(() =>
     this.activePlayerId() === 'blue' ? 'Blue Player' : 'Orange Player',
   );
+
+  requestExitGame(): void {
+    this.exitGame.emit();
+  }
 }

@@ -32,7 +32,7 @@
     <img class="navbar__current-icon" [src]="currentPlayerIcon()" [alt]="currentPlayerLabel()" />
   </div>
 
-  <button type="button" class="navbar__exit-btn">
+  <button type="button" class="navbar__exit-btn" (click)="requestExitGame()">
     <span class="navbar__exit-word">Exit </span><span class="navbar__exit-game-word">Game</span>
   </button>
 </nav>

@@ -1,0 +1,49 @@
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__panel {
+	border-radius: 0;
+	animation: confirmation-overlay__panel--slide-in-top 360ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__title {
+	color: rgba(48, 49, 49, 1);
+	font-family: 'Red Rose', sans-serif;
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__btn {
+	border-radius: 0;
+	font-family: 'Red Rose', sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__btn--secondary {
+	background-color: rgba(129, 205, 188, 1);
+	border: 2px solid transparent;
+	color: rgba(255, 255, 255, 1);
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__btn--secondary:hover {
+	background-color: rgba(164, 219, 208, 1);
+	border-color: rgba(99, 185, 165, 1);
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__btn--primary {
+	background-color: rgba(241, 252, 249, 1);
+	border: 1px solid rgba(119, 211, 190, 1);
+	color: rgba(119, 211, 190, 1);
+}
+
+.confirmation-overlay--theme-code-vibes .confirmation-overlay__btn--primary:hover {
+	box-shadow: inset 0 0 0 2px rgba(119, 211, 190, 1);
+}
+
+@keyframes confirmation-overlay__panel--slide-in-top {
+	from {
+		opacity: 0;
+		transform: translateY(-100vh);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

@@ -10,6 +10,7 @@
 			[themeId]="themeId()"
 			[activePlayerId]="activePlayerId()"
 			[scores]="scoreByPlayer()"
+			(exitGame)="openExitOverlay()"
 		></app-navbar>
 
 		<div
@@ -42,4 +43,12 @@
 			}
 		</div>
 	</div>
+
+	@if (isExitOverlayOpen()) {
+		<app-confirmation-overlay
+			[themeId]="themeId()"
+			(cancel)="closeExitOverlay()"
+			(confirm)="confirmExitGame()"
+		></app-confirmation-overlay>
+	}
 </section>

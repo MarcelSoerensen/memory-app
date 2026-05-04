@@ -1,0 +1,66 @@
+.confirmation-overlay--theme-foods .confirmation-overlay__panel {
+	border-radius: 10px;
+	animation: confirmation-overlay__panel--fade-in-foods 300ms ease;
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__title {
+	color: rgba(228, 137, 67, 1);
+	font-family: 'Klee One', sans-serif;
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__btn {
+	font-family: 'Delius Unicase', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__btn--secondary {
+	background-color: rgba(243, 175, 85, 1);
+	color: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(228, 137, 67, 1);
+	box-shadow:
+		inset 0 1px 0 rgba(159, 84, 26, 0.58),
+		inset -2px 0 0 rgba(120, 61, 17, 0.34),
+		inset 0 -1px 0 rgba(255, 255, 250, 1),
+		inset 0 -3px 0 rgba(255, 244, 220, 0.96),
+		inset 1px 0 0 rgba(255, 255, 246, 0.98),
+		inset 3px 0 0 rgba(255, 240, 204, 0.72),
+		0 0 0 1px rgba(247, 195, 121, 0.45);
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__btn--secondary:hover {
+	background-color: rgba(228, 137, 67, 1);
+	border-color: transparent;
+	box-shadow: none;
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__btn--primary {
+	background-color: rgba(254, 249, 243, 1);
+	color: rgba(230, 144, 77, 1);
+	border: 1px solid rgba(228, 137, 67, 1);
+	box-shadow:
+		inset 0 1px 0 rgba(159, 84, 26, 0.58),
+		inset -2px 0 0 rgba(120, 61, 17, 0.34),
+		inset 0 -1px 0 rgba(255, 255, 250, 1),
+		inset 0 -3px 0 rgba(255, 244, 220, 0.96),
+		inset 1px 0 0 rgba(255, 255, 246, 0.98),
+		inset 3px 0 0 rgba(255, 240, 204, 0.72),
+		0 0 0 1px rgba(247, 195, 121, 0.45);
+}
+
+.confirmation-overlay--theme-foods .confirmation-overlay__btn--primary:hover {
+	background-color: rgba(228, 137, 67, 1);
+	color: rgba(255, 255, 255, 1);
+	border-color: transparent;
+	box-shadow: none;
+}
+
+@keyframes confirmation-overlay__panel--fade-in-foods {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

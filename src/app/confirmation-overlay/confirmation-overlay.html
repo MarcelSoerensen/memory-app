@@ -1,0 +1,28 @@
+<div class="confirmation-overlay__backdrop" (click)="closeOverlay()" aria-hidden="true"></div>
+
+<section
+	class="confirmation-overlay"
+	[class.confirmation-overlay--theme-code-vibes]="themeId() === 'code-vibes-theme'"
+	[class.confirmation-overlay--theme-gaming]="themeId() === 'gaming-theme'"
+	[class.confirmation-overlay--theme-da-projects]="themeId() === 'da-projects-theme'"
+	[class.confirmation-overlay--theme-foods]="themeId() === 'foods-theme'"
+	role="dialog"
+	aria-modal="true"
+	aria-labelledby="confirmation-overlay-title"
+	(click)="closeOverlay()"
+>
+	<div class="confirmation-overlay__panel" (click)="$event.stopPropagation()">
+		<h2 id="confirmation-overlay-title" class="confirmation-overlay__title">
+			Are you sure you want to quit the game?
+		</h2>
+
+		<div class="confirmation-overlay__actions">
+			<button type="button" class="confirmation-overlay__btn confirmation-overlay__btn--secondary" (click)="closeOverlay()">
+				@if (themeId() === 'gaming-theme' || themeId() === 'foods-theme') { No, back to game } @else { Back To Game }
+			</button>
+			<button type="button" class="confirmation-overlay__btn confirmation-overlay__btn--primary" (click)="confirmExit()">
+				@if (themeId() === 'gaming-theme') { Yes, quit game } @else { Exit Game }
+			</button>
+		</div>
+	</div>
+</section>
