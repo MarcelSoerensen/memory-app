@@ -3,8 +3,25 @@
 }
 
 .game-screen--theme-da-projects .game-screen__card--matched {
-	border-width: 3px;
-	border-color: rgba(58, 115, 145, 1);
-	border-radius: 13px;
+	border-width: 0;
+	border-color: transparent;
 	box-shadow: none;
+}
+
+.game-screen--theme-da-projects .game-screen__card-face {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game-screen--theme-da-projects .game-screen__card-image {
+	width: 100%;
+	height: auto;
+	object-fit: unset;
+}
+
+.game-screen--theme-da-projects .game-screen__card--matched .game-screen__card-image {
+	border: 3px solid rgba(58, 115, 145, 1);
+	border-radius: 18px;
+	opacity: 1;
 }

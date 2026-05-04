@@ -1,12 +1,90 @@
+.navbar--theme-da-projects {
+  background-color: rgba(241, 243, 244, 1);
+  height: 6rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+}
+
+.navbar--theme-da-projects .navbar__players {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+
 .navbar--theme-da-projects .navbar__player-icon {
-	width: 1.8rem;
-	height: 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
-.navbar--theme-da-projects .navbar__current.navbar__current--blue {
-	background-color: rgba(56, 125, 191, 1);
+.navbar--theme-da-projects .navbar__player-name {
+  display: none;
 }
 
-.navbar--theme-da-projects .navbar__current.navbar__current--orange {
-	background-color: rgba(219, 116, 45, 1);
+.navbar--theme-da-projects .navbar__score-value {
+  font-family: 'Figtree', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgba(58, 115, 145, 1);
+}
+
+.navbar--theme-da-projects .navbar__score-value--orange {
+  color: rgba(218, 113, 43, 1);
+}
+
+.navbar--theme-da-projects .navbar__score-value--blue {
+  color: rgba(56, 125, 191, 1);
+}
+
+.navbar--theme-da-projects .navbar__current {
+  background-color: transparent;
+}
+
+.navbar--theme-da-projects .navbar__current-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 3px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.navbar--theme-da-projects .navbar__current--blue .navbar__current-icon {
+  background-color: rgba(56, 125, 191, 1);
+}
+
+.navbar--theme-da-projects .navbar__current--orange .navbar__current-icon {
+  background-color: rgba(219, 116, 45, 1);
+}
+
+.navbar--theme-da-projects .navbar__current-label {
+  font-family: 'Figtree', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(58, 115, 145, 1);
+}
+
+.navbar--theme-da-projects .navbar__exit-btn {
+  background-color: rgba(198, 228, 240, 1);
+  border-radius: 10px;
+  border: none;
+  font-family: 'Figtree', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(58, 115, 145, 1);
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.navbar--theme-da-projects .navbar__exit-btn::before {
+  background-color: rgba(58, 115, 145, 1);
+  transition: background-color 140ms ease;
+}
+
+.navbar--theme-da-projects .navbar__exit-btn:hover {
+  background-color: rgba(58, 115, 145, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar--theme-da-projects .navbar__exit-btn:hover::before {
+  background-color: rgba(255, 255, 255, 1);
 }

@@ -1,33 +1,38 @@
 <nav
-	class="navbar"
-	[class.navbar--theme-code-vibes]="themeId() === 'code-vibes-theme'"
-	[class.navbar--theme-gaming]="themeId() === 'gaming-theme'"
-	[class.navbar--theme-da-projects]="themeId() === 'da-projects-theme'"
-	[class.navbar--theme-foods]="themeId() === 'foods-theme'"
+  class="navbar"
+  [class.navbar--theme-code-vibes]="themeId() === 'code-vibes-theme'"
+  [class.navbar--theme-gaming]="themeId() === 'gaming-theme'"
+  [class.navbar--theme-da-projects]="themeId() === 'da-projects-theme'"
+  [class.navbar--theme-foods]="themeId() === 'foods-theme'"
 >
-	<div class="navbar__players" aria-label="Player scores">
-		<div class="navbar__player-score">
-			<img class="navbar__player-icon" [src]="bluePlayerIcon()" alt="Blue player" />
-			<span class="navbar__player-name navbar__player-name--blue">Blue</span>
-			<span class="navbar__score-value navbar__score-value--blue">{{ scores().blue }}</span>
-		</div>
+  <div class="navbar__players" aria-label="Player scores">
+    <div class="navbar__player-score">
+      <img class="navbar__player-icon" [src]="bluePlayerIcon()" alt="Blue player" />
+      <span class="navbar__player-name navbar__player-name--blue">Blue</span>
+      <span class="navbar__score-value navbar__score-value--blue">{{ scores().blue }}</span>
+    </div>
 
-		<div class="navbar__player-score">
-			<img class="navbar__player-icon" [src]="orangePlayerIcon()" alt="Orange player" />
-			<span class="navbar__player-name navbar__player-name--orange">Orange</span>
-			<span class="navbar__score-value navbar__score-value--orange">{{ scores().orange }}</span>
-		</div>
-	</div>
+    <div class="navbar__player-score">
+      <img class="navbar__player-icon" [src]="orangePlayerIcon()" alt="Orange player" />
+      <span class="navbar__player-name navbar__player-name--orange">Orange</span>
+      <span class="navbar__score-value navbar__score-value--orange">{{ scores().orange }}</span>
+    </div>
+  </div>
 
-	<div
-		class="navbar__current"
-		[class.navbar__current--blue]="activePlayerId() === 'blue'"
-		[class.navbar__current--orange]="activePlayerId() === 'orange'"
-		aria-live="polite"
-	>
-		<span class="navbar__current-label">Current Player:</span>
-		<img class="navbar__current-icon" [src]="currentPlayerIcon()" [alt]="currentPlayerLabel()" />
-	</div>
+  <div
+    class="navbar__current"
+    [class.navbar__current--blue]="activePlayerId() === 'blue'"
+    [class.navbar__current--orange]="activePlayerId() === 'orange'"
+    aria-live="polite"
+  >
+    <span class="navbar__current-label"
+      ><span class="navbar__current-word">Current </span
+      ><span class="navbar__current-player-word">Player:</span></span
+    >
+    <img class="navbar__current-icon" [src]="currentPlayerIcon()" [alt]="currentPlayerLabel()" />
+  </div>
 
-	<button type="button" class="navbar__exit-btn">Exit Game</button>
+  <button type="button" class="navbar__exit-btn">
+    <span class="navbar__exit-word">Exit </span><span class="navbar__exit-game-word">Game</span>
+  </button>
 </nav>

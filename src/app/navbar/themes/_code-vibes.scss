@@ -1,74 +1,74 @@
 .navbar--theme-code-vibes {
-	background-color: rgba(61, 82, 78, 0);
-	padding: 1rem 3rem;
-	border-radius: 0;
+  background-color: rgba(61, 82, 78, 0);
+  padding: 1rem 3rem;
+  border-radius: 0;
 }
 
 .navbar--theme-code-vibes .navbar__player-score {
-	background-color: transparent;
-	border-radius: 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .navbar--theme-code-vibes .navbar__players {
-	background-color: rgba(89, 126, 118, 1);
-	padding: 0.6rem 0.95rem;
-	border-radius: 0;
+  background-color: rgba(89, 126, 118, 1);
+  padding: 0.6rem 0.95rem;
+  border-radius: 0;
 }
 
 .navbar--theme-code-vibes .navbar__player-icon {
-	width: 1.3rem;
-	height: 1.3rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .navbar--theme-code-vibes .navbar__player-name {
-	font-family: 'Red Rose', sans-serif;
-	font-size: 24px;
+  font-family: 'Red Rose', sans-serif;
+  font-size: 24px;
 }
 
 .navbar--theme-code-vibes .navbar__player-name--blue {
-	color: rgba(88, 175, 249, 1);
+  color: rgba(88, 175, 249, 1);
 }
 
 .navbar--theme-code-vibes .navbar__player-name--orange {
-	color: rgba(231, 147, 76, 1);
+  color: rgba(231, 147, 76, 1);
 }
 
 .navbar--theme-code-vibes .navbar__score-value--blue {
-	color: rgba(88, 175, 249, 1);
-	font-size: 24px;
+  color: rgba(88, 175, 249, 1);
+  font-size: 24px;
 }
 
 .navbar--theme-code-vibes .navbar__score-value--orange {
-	color: rgba(231, 147, 76, 1);
-	font-size: 24px;
+  color: rgba(231, 147, 76, 1);
+  font-size: 24px;
 }
 
 .navbar--theme-code-vibes .navbar__current {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .navbar--theme-code-vibes .navbar__current-label {
-	font-family: 'Red Rose', sans-serif;
-	color: rgba(255, 255, 255, 1);
-	font-size: 26px;
+  font-family: 'Red Rose', sans-serif;
+  color: rgba(255, 255, 255, 1);
+  font-size: 26px;
 }
 
 .navbar--theme-code-vibes .navbar__current-icon {
-	width: 2rem;
-	height: 1.5rem;
+  width: 2rem;
+  height: 1.5rem;
 }
 
 .navbar--theme-code-vibes .navbar__exit-btn {
-	background-color: rgba(63, 74, 72, 1);
-	color: rgba(255, 255, 255, 1);
-	font-family: 'Red Rose', sans-serif;
-	font-size: 24px;
-	border: 1px solid rgba(102, 178, 161, 1);
-	border-radius: 0;
-	transition: box-shadow 120ms ease;
+  background-color: rgba(63, 74, 72, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Red Rose', sans-serif;
+  font-size: 24px;
+  border: 1px solid rgba(102, 178, 161, 1);
+  border-radius: 0;
+  transition: box-shadow 120ms ease;
 }
 
 .navbar--theme-code-vibes .navbar__exit-btn:hover {
-    background-color: rgba(76, 96, 92, 1);
-	box-shadow: inset 0 0 0 1px rgba(102, 178, 161, 1);
+  background-color: rgba(76, 96, 92, 1);
+  box-shadow: inset 0 0 0 1px rgba(102, 178, 161, 1);
 }
