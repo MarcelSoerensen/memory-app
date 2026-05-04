@@ -158,3 +158,39 @@
     outline-offset: 4px;
   }
 }
+
+.start-screen__footer {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.start-screen__footer-link {
+  font-family: 'Almarai', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(240, 234, 110, 0.1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: rgba(240, 234, 110, 0.3);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(240, 234, 110, 1);
+    outline-offset: 2px;
+  }
+}
+
+.start-screen__footer-divider {
+  color: rgba(240, 234, 110, 0.4);
+  font-weight: 400;
+}

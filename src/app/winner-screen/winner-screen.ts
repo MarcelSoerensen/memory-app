@@ -62,7 +62,7 @@ export class WinnerScreen {
     this.themeId() === 'code-vibes-theme' ? 'Back to start' : 'Home',
   );
 
-  async goToStart(): Promise<void> {
-    await this.router.navigate(['/']);
+  goToStart(): void {
+    void this.router.navigate(['/']);
   }
 }

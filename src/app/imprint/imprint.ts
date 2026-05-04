@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-imprint',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './imprint.html',
   styleUrl: './imprint.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Imprint {}
