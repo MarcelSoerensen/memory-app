@@ -44,6 +44,18 @@
 		</div>
 	</div>
 
+	@if (isGameOver() && !showWinnerScreen()) {
+		<app-game-over-screen
+			[themeId]="themeId()"
+			[scores]="scoreByPlayer()"
+			(sequenceDone)="showWinnerAfterGameOver()"
+		></app-game-over-screen>
+	}
+
+	@if (showWinnerScreen()) {
+		<app-winner-screen [themeId]="themeId()" [scores]="scoreByPlayer()"></app-winner-screen>
+	}
+
 	@if (isExitOverlayOpen()) {
 		<app-confirmation-overlay
 			[themeId]="themeId()"

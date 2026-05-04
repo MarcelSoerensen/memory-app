@@ -1,0 +1,24 @@
+@use './themes/code-vibes';
+@use './themes/gaming';
+@use './themes/da-projects';
+@use './themes/foods';
+
+.winner-screen {
+	position: fixed;
+	inset: 0;
+	z-index: 23;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.winner-screen__content {
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+}
+
+.winner-screen__title {
+	margin: 0;
+	font-size: clamp(2.5rem, 7vw, 5rem);
+	line-height: 1;
+}

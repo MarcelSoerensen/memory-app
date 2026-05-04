@@ -1,0 +1,37 @@
+.game-over-screen--theme-foods {
+	background-color: rgba(228, 137, 67, 1);
+}
+
+.game-over-screen--theme-foods .game-over-screen__title {
+	font-family: 'Klee One', sans-serif;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 3px 3px 8px rgba(110, 62, 22, 0.68);
+}
+
+.game-over-screen--theme-foods .game-over-screen__subtitle {
+	font-family: 'Klee One', sans-serif;
+}
+
+.game-over-screen--theme-foods .game-over-screen__players {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10px;
+}
+
+.game-over-screen--theme-foods .game-over-screen__player-name {
+	display: none;
+}
+
+.game-over-screen--theme-foods .game-over-screen__score-value {
+	font-family: 'Delius Unicase', sans-serif;
+	font-size: 1.875rem;
+	font-weight: 400;
+}
+
+.game-over-screen--theme-foods .game-over-screen__score-value--blue {
+	color: rgba(56, 125, 191, 1);
+}
+
+.game-over-screen--theme-foods .game-over-screen__score-value--orange {
+	color: rgba(218, 113, 43, 1);
+}

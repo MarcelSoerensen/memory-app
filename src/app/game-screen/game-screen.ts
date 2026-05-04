@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationOverlay } from '../confirmation-overlay/confirmation-overlay';
+import { GameOverScreen } from '../game-over-screen/game-over-screen';
 import { GameSettingsService, PlayerId } from '../game-settings.service';
 import { Navbar } from '../navbar/navbar';
+import { WinnerScreen } from '../winner-screen/winner-screen';
 
 interface GameCard {
   id: string;
@@ -14,7 +16,7 @@ interface GameCard {
 
 @Component({
   selector: 'app-game-screen',
-  imports: [Navbar, ConfirmationOverlay],
+  imports: [Navbar, ConfirmationOverlay, GameOverScreen, WinnerScreen],
   templateUrl: './game-screen.html',
   styleUrl: './game-screen.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +36,8 @@ export class GameScreen {
     orange: 0,
   });
   readonly isExitOverlayOpen = signal(false);
+  readonly isGameOver = computed(() => this.gameCards().length > 0 && this.gameCards().every((c) => c.isMatched));
+  readonly showWinnerScreen = signal(false);
 
   readonly playerOrder = computed<[PlayerId, PlayerId]>(() => {
     const selected = this.settings.selectedPlayer()?.id ?? 'blue';
@@ -209,5 +213,9 @@ export class GameScreen {
   confirmExitGame(): void {
     this.isExitOverlayOpen.set(false);
     void this.router.navigate(['/settings']);
+  }
+
+  showWinnerAfterGameOver(): void {
+    this.showWinnerScreen.set(true);
   }
 }

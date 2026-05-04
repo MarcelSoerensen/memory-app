@@ -1,1 +1,26 @@
-<p>game-over-screen works!</p>
+<section
+	class="game-over-screen"
+	[class.game-over-screen--theme-code-vibes]="themeId() === 'code-vibes-theme'"
+	[class.game-over-screen--theme-gaming]="themeId() === 'gaming-theme'"
+	[class.game-over-screen--theme-da-projects]="themeId() === 'da-projects-theme'"
+	[class.game-over-screen--theme-foods]="themeId() === 'foods-theme'"
+	aria-live="polite"
+	aria-labelledby="game-over-title"
+>
+	<div class="game-over-screen__content" [class.game-over-screen__content--fade-out]="isFadingOut()">
+		<h1 id="game-over-title" class="game-over-screen__title">Game Over</h1>
+		<p class="game-over-screen__subtitle">Final Score</p>
+		<div class="game-over-screen__players" aria-label="Final player scores">
+			<div class="game-over-screen__player-score">
+				<img [src]="bluePlayerIcon()" alt="Blue player" />
+				<span class="game-over-screen__player-name game-over-screen__player-name--blue">Blue</span>
+				<span class="game-over-screen__score-value game-over-screen__score-value--blue">{{ scores().blue }}</span>
+			</div>
+			<div class="game-over-screen__player-score">
+				<img [src]="orangePlayerIcon()" alt="Orange player" />
+				<span class="game-over-screen__player-name game-over-screen__player-name--orange">Orange</span>
+				<span class="game-over-screen__score-value game-over-screen__score-value--orange">{{ scores().orange }}</span>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,1 +1,12 @@
-<p>winner-screen works!</p>
+<section
+	class="winner-screen"
+	[class.winner-screen--theme-code-vibes]="themeId() === 'code-vibes-theme'"
+	[class.winner-screen--theme-gaming]="themeId() === 'gaming-theme'"
+	[class.winner-screen--theme-da-projects]="themeId() === 'da-projects-theme'"
+	[class.winner-screen--theme-foods]="themeId() === 'foods-theme'"
+	aria-live="polite"
+>
+	<div class="winner-screen__content">
+		<h2 class="winner-screen__title">{{ winnerLabel() }}</h2>
+	</div>
+</section>

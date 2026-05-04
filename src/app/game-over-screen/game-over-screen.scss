@@ -1,0 +1,109 @@
+@use './themes/code-vibes';
+@use './themes/gaming';
+@use './themes/da-projects';
+@use './themes/foods';
+
+.game-over-screen {
+	position: fixed;
+	inset: 0;
+	z-index: 22;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game-over-screen__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.3rem;
+	opacity: 0;
+	animation: game-over-content-enter 1400ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
+}
+
+.game-over-screen__content--fade-out {
+	animation: game-over-content-exit 900ms ease forwards;
+}
+
+.game-over-screen__title {
+	text-align: center;
+	font-size: 10rem;
+	line-height: 0.95;
+    margin: 0;
+	animation: game-over-title-enter 820ms cubic-bezier(0.2, 0.85, 0.2, 1) both;
+}
+
+.game-over-screen__subtitle {
+	margin: 3rem 0 1rem;
+	text-align: center;
+	font-size: 2.625rem;
+	font-weight: 400;
+	line-height: 1;
+	color: rgba(255, 255, 255, 1);
+}
+
+.game-over-screen__players {
+	display: flex;
+	gap: 1.5rem;
+	padding: 0.6rem 0.95rem;
+	min-height: calc(2rem + 1.2rem);
+	box-sizing: border-box;
+}
+
+.game-over-screen__player-score {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.game-over-screen__player-score img {
+	width: 1.8rem;
+	height: 1.8rem;
+}
+
+.game-over-screen__player-name {
+	font-size: 1rem;
+}
+
+.game-over-screen__score-value {
+	font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+	.game-over-screen__title {
+		font-size: clamp(3rem, 12vw, 7.5rem);
+	}
+
+	.game-over-screen__subtitle {
+		font-size: clamp(1.6rem, 5.6vw, 2.625rem);
+	}
+}
+
+@keyframes game-over-title-enter {
+	from {
+		opacity: 0;
+		transform: scale(0.72);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes game-over-content-enter {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes game-over-content-exit {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}

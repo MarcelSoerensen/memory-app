@@ -1,0 +1,36 @@
+.game-over-screen--theme-gaming {
+	background-color: rgba(50, 78, 94, 1);
+}
+
+.game-over-screen--theme-gaming .game-over-screen__title {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 700;
+	color: rgba(237, 27, 118, 1);
+}
+
+.game-over-screen--theme-gaming .game-over-screen__subtitle {
+	font-family: 'Orbitron', sans-serif;
+}
+
+.game-over-screen--theme-gaming .game-over-screen__players {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10px;
+}
+
+.game-over-screen--theme-gaming .game-over-screen__player-name {
+	display: none;
+}
+
+.game-over-screen--theme-gaming .game-over-screen__score-value {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 1.875rem;
+	font-weight: 500;
+}
+
+.game-over-screen--theme-gaming .game-over-screen__score-value--blue {
+	color: rgba(56, 125, 191, 1);
+}
+
+.game-over-screen--theme-gaming .game-over-screen__score-value--orange {
+	color: rgba(218, 113, 43, 1);
+}
