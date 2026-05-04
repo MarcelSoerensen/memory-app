@@ -10,15 +10,117 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
 
 .winner-screen__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
 	text-align: center;
-	color: rgba(255, 255, 255, 1);
+}
+
+.winner-screen__label {
+	margin: 0;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 1;
 }
 
 .winner-screen__title {
 	margin: 0;
-	font-size: clamp(2.5rem, 7vw, 5rem);
+	font-size: 3.75rem;
+	font-weight: 700;
 	line-height: 1;
+}
+
+.winner-screen__title-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.9rem;
+	flex-wrap: wrap;
+}
+
+.winner-screen__title--ampersand {
+	font-weight: 400;
+}
+
+.winner-screen__image-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.winner-screen__image {
+	max-width: 12.5rem;
+	max-height: 15.625rem;
+	width: auto;
+	height: auto;
+}
+
+.winner-screen__home-btn {
+	border: none;
+	background-color: rgba(48, 49, 49, 1);
+	color: rgba(255, 255, 255, 1);
+	display: inline-flex;
+	align-items: center;
+	font-family: 'Almarai', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	padding: 0.6rem 0.95rem;
+	min-height: calc(2rem + 1.2rem);
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+@keyframes confetti-fall {
+	0% {
+		top: -25%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40%;
+		opacity: 1;
+	}
+	50% {
+		top: 20%;
+		left: 0;
+		transform: translateX(0);
+		width: 100%;
+		opacity: 1;
+	}
+	100% {
+		top: 115%;
+		left: 0;
+		transform: translateX(0);
+		width: 100%;
+		opacity: 0;
+	}
+}
+
+.winner-screen__confetti {
+	position: absolute;
+	pointer-events: none;
+	height: auto;
+	animation: confetti-fall 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+	animation-delay: 0.3s;
+	opacity: 0;
+}
+
+@media (max-width: 900px) {
+	.winner-screen__label {
+		font-size: clamp(1.8rem, 7vw, 40px);
+	}
+
+	.winner-screen__content {
+		gap: 1.4rem;
+	}
+
+	.winner-screen__title-group,
+	.winner-screen__image-group {
+		gap: 1rem;
+	}
 }

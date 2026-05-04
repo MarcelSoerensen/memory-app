@@ -6,7 +6,41 @@
 	[class.winner-screen--theme-foods]="themeId() === 'foods-theme'"
 	aria-live="polite"
 >
+	<img
+		class="winner-screen__confetti"
+		src="/assets/images/confetti.svg"
+		alt=""
+		aria-hidden="true"
+	/>
 	<div class="winner-screen__content">
-		<h2 class="winner-screen__title">{{ winnerLabel() }}</h2>
+		<p class="winner-screen__label">The Winner is</p>
+
+		@if (isDraw()) {
+			<div class="winner-screen__title-group" aria-label="Draw between both players">
+				<span class="winner-screen__title winner-screen__title--orange">Player Orange</span>
+				<span class="winner-screen__title winner-screen__title--ampersand">&</span>
+				<span class="winner-screen__title winner-screen__title--blue">Player Blue</span>
+			</div>
+
+			<div class="winner-screen__image-group" aria-label="Winning player graphics">
+				@for (player of drawPlayers(); track player.id) {
+					<img class="winner-screen__image" [src]="player.imageUrl" [alt]="player.label" />
+				}
+			</div>
+		} @else {
+			<h2
+				class="winner-screen__title"
+				[class.winner-screen__title--blue]="winnerId() === 'blue'"
+				[class.winner-screen__title--orange]="winnerId() === 'orange'"
+			>
+				{{ winnerLabel() }}
+			</h2>
+
+			<img class="winner-screen__image" [src]="winnerImageUrl()" [alt]="winnerLabel()" />
+		}
+
+		<button type="button" class="winner-screen__home-btn" (click)="goToStart()">
+			{{ homeButtonLabel() }}
+		</button>
 	</div>
 </section>
