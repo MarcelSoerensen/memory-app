@@ -14,7 +14,9 @@
 .navbar__players {
 	display: flex;
 	gap: 1.5rem;
-	padding: 0.5rem 0.65rem;
+	padding: 0.6rem 0.95rem;
+	min-height: calc(2rem + 1.2rem);
+	box-sizing: border-box;
 }
 
 .navbar__player-score {
@@ -25,8 +27,6 @@
 }
 
 .navbar__player-icon {
-	width: 1.4rem;
-	height: 1.4rem;
 	display: block;
 }
 
@@ -63,8 +63,6 @@
 }
 
 .navbar__current-icon {
-	width: 2rem;
-	height: 1.5rem;
 	display: block;
 }
 
@@ -79,6 +77,7 @@
 	font-weight: 700;
 	font-size: 1rem;
 	padding: 0.6rem 0.95rem;
+	min-height: calc(2rem + 1.2rem);
 	box-sizing: border-box;
 	cursor: pointer;
 }

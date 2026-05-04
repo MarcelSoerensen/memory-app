@@ -1,7 +1,92 @@
-.navbar--theme-gaming .navbar__current.navbar__current--blue {
-	background-color: rgba(56, 125, 191, 1);
+.navbar--theme-gaming {
+  background-color: rgba(85, 93, 115, 1);
+  height: 6rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
 }
 
-.navbar--theme-gaming .navbar__current.navbar__current--orange {
-	background-color: rgba(219, 116, 45, 1);
+.navbar--theme-gaming .navbar__players {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+
+.navbar--theme-gaming .navbar__player-name {
+  display: none;
+}
+
+.navbar--theme-gaming .navbar__player-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.navbar--theme-gaming .navbar__score-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+.navbar--theme-gaming .navbar__score-value--blue {
+  color: rgba(56, 125, 191, 1);
+}
+
+.navbar--theme-gaming .navbar__score-value--orange {
+  color: rgba(218, 113, 43, 1);
+}
+
+.navbar--theme-gaming .navbar__current {
+  background-color: transparent;
+}
+
+.navbar--theme-gaming .navbar__current-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar--theme-gaming .navbar__current-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 3px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.navbar--theme-gaming .navbar__current--blue .navbar__current-icon {
+  background-color: rgba(56, 125, 191, 1);
+}
+
+.navbar--theme-gaming .navbar__current--orange .navbar__current-icon {
+  background-color: rgba(219, 116, 45, 1);
+}
+
+.navbar--theme-gaming .navbar__exit-btn {
+  background-color: rgba(61, 75, 96, 1);
+  border: 1px solid rgba(212, 55, 83, 1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.navbar--theme-gaming .navbar__exit-btn::before {
+  background-color: rgba(255, 255, 255, 1);
+  transition: background-color 140ms ease;
+}
+
+.navbar--theme-gaming .navbar__exit-btn:hover::before {
+  background-color: rgba(212, 55, 83, 1);
+}
+
+.navbar--theme-gaming .navbar__exit-btn:hover {
+  background-color: rgba(61, 75, 96, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(212, 55, 83, 1);
 }

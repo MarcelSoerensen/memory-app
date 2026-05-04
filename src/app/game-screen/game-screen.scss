@@ -10,10 +10,6 @@
 	align-items: flex-start;
 	justify-content: center;
 	overflow: hidden;
-	--game-screen-match-border-width: 2px;
-	--game-screen-match-border-color: transparent;
-	--game-screen-match-border-radius: 0;
-	--game-screen-match-shadow: none;
 }
 
 .game-screen__layout {
@@ -43,19 +39,12 @@
 	aspect-ratio: 1 / 1;
 	perspective: 1000px;
 	cursor: pointer;
-	border-radius: var(--game-screen-match-border-radius);
+	border-radius: 0;
 	transition:
 		border-color 250ms ease-out,
 		border-width 250ms ease-out,
 		border-radius 250ms ease-out,
 		box-shadow 250ms ease-out;
-}
-
-.game-screen__card--matched {
-	border-width: var(--game-screen-match-border-width);
-	border-color: var(--game-screen-match-border-color);
-	border-radius: var(--game-screen-match-border-radius);
-	box-shadow: var(--game-screen-match-shadow);
 }
 
 .game-screen__card:focus-visible {
