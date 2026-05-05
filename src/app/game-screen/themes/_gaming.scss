@@ -18,9 +18,14 @@
 	justify-content: center;
 }
 
+.game-screen--theme-gaming .game-screen__card-face--back::after {
+	display: none;
+}
+
 .game-screen--theme-gaming .game-screen__card-face--back .game-screen__card-image {
 	border-inline: 1px solid rgba(158, 45, 98, 1);
 	border-radius: clamp(4px, 20%, 22px);
+	transition: filter 180ms ease-out;
 }
 
 .game-screen--theme-gaming .game-screen__card-image {
@@ -29,6 +34,15 @@
 	width: auto;
 	height: 100%;
 	filter: drop-shadow(8px 8px 8px rgba(18, 16, 35, 0.5));
+}
+
+@media (hover: hover) {
+	.game-screen--theme-gaming
+		.game-screen__card:not(:disabled):not(.game-screen__card--flipped):not(.game-screen__card--matched):hover
+		.game-screen__card-face--back
+		.game-screen__card-image {
+		filter: brightness(1.08) saturate(1.05) drop-shadow(8px 8px 8px rgba(18, 16, 35, 0.5));
+	}
 }
 
 .game-screen--theme-gaming .game-screen__card--matched .game-screen__card-image {

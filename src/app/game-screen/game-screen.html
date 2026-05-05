@@ -44,7 +44,7 @@
 		</div>
 	</div>
 
-	@if (isGameOver() && !showWinnerScreen()) {
+	@if (showGameOverScreen() && !showWinnerScreen()) {
 		<app-game-over-screen
 			[themeId]="themeId()"
 			[scores]="scoreByPlayer()"

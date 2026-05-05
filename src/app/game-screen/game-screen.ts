@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationOverlay } from '../confirmation-overlay/confirmation-overlay';
 import { GameOverScreen } from '../game-over-screen/game-over-screen';
@@ -22,6 +22,8 @@ interface GameCard {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameScreen {
+  private readonly gameOverDelayMs = 1200;
+
   private readonly settings = inject(GameSettingsService);
   private readonly router = inject(Router);
 
@@ -37,6 +39,7 @@ export class GameScreen {
   });
   readonly isExitOverlayOpen = signal(false);
   readonly isGameOver = computed(() => this.gameCards().length > 0 && this.gameCards().every((c) => c.isMatched));
+  readonly showGameOverScreen = signal(false);
   readonly showWinnerScreen = signal(false);
 
   readonly playerOrder = computed<[PlayerId, PlayerId]>(() => {
@@ -48,10 +51,15 @@ export class GameScreen {
   readonly activePlayerId = computed(() => this.playerOrder()[this.activePlayerIndex()]);
 
   private readonly openedCardIds = signal<string[]>([]);
+  private gameOverTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
     this.resetRoundState();
     this.createGameCards();
+  }
+
+  ngOnDestroy(): void {
+    this.clearGameOverTimeout();
   }
 
   private resetRoundState(): void {
@@ -59,6 +67,9 @@ export class GameScreen {
     this.scoreByPlayer.set({ blue: 0, orange: 0 });
     this.openedCardIds.set([]);
     this.isBoardLocked.set(false);
+    this.showGameOverScreen.set(false);
+    this.showWinnerScreen.set(false);
+    this.clearGameOverTimeout();
   }
 
   private createGameCards(): void {
@@ -132,6 +143,7 @@ export class GameScreen {
     if (firstCard.pairId === secondCard.pairId) {
       this.markCardsAsMatched(firstId, secondId);
       this.addPointToActivePlayer();
+      this.scheduleGameOverIfFinished();
 
       this.openedCardIds.set([]);
       return;
@@ -184,6 +196,28 @@ export class GameScreen {
 
   private switchToNextPlayer(): void {
     this.activePlayerIndex.update((index) => (index === 0 ? 1 : 0));
+  }
+
+  private scheduleGameOverIfFinished(): void {
+    const allCardsMatched = this.gameCards().length > 0 && this.gameCards().every((card) => card.isMatched);
+    if (!allCardsMatched || this.showGameOverScreen()) {
+      return;
+    }
+
+    this.clearGameOverTimeout();
+    this.gameOverTimeoutId = setTimeout(() => {
+      this.showGameOverScreen.set(true);
+      this.gameOverTimeoutId = null;
+    }, this.gameOverDelayMs);
+  }
+
+  private clearGameOverTimeout(): void {
+    if (this.gameOverTimeoutId === null) {
+      return;
+    }
+
+    clearTimeout(this.gameOverTimeoutId);
+    this.gameOverTimeoutId = null;
   }
 
   private pickRandomCards(cards: readonly string[], count: number): string[] {

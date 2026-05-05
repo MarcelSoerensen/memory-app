@@ -77,6 +77,23 @@
 	transform: rotateY(180deg);
 }
 
+.game-screen__card-face--back::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.2);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 180ms ease-out;
+}
+
+@media (hover: hover) {
+	.game-screen__card:not(:disabled):not(.game-screen__card--flipped):not(.game-screen__card--matched):hover
+		.game-screen__card-face--back::after {
+		opacity: 1;
+	}
+}
+
 .game-screen__card-image {
 	width: 100%;
 	height: 100%;
